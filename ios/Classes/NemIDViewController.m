@@ -39,7 +39,7 @@
 
 #pragma mark - MainViewController methods
 
--(void)loadNemID{
+-(void)loadNemID {
     // If width or height is not specified, use full screen.
     if ((self.width.length > 0) && (self.height.length > 0)){
         iframeWidth = [self.width floatValue];
@@ -99,6 +99,10 @@
     if (message.command === \"RequestPrint\") { \
     window.globalContent = message.content; \
     window.location = 'RequestPrint:/' \
+    } \
+    if (message.command === \"RequestKeyboard\") { \
+    window.globalContent = message.content; \
+    window.location = 'RequestKeyboard:/' \
     } \
     if (message.command === \"AwaitingAppApproval\") { \
     window.location = 'AwaitingAppApproval:/' \
@@ -195,7 +199,6 @@
                       NSString *contentNormalized;
                       if (error) {
                           NSLog(@"Got error while evaluating getContent(): %@", error.localizedDescription);
-                          //[self.controller.responseTextView setText:error.localizedDescription];
                       } else {
                           contentNormalized = [NetworkUtilities base64Decode:content];
                           NSLog(@"Got content while evaluating getContent(): %@", contentNormalized);
@@ -203,11 +206,10 @@
                               [self validateResponse:validationResponse];
                               [self getFlowDetailsFromValidationResponse:validationResponse andJSClientResponse:contentNormalized];
                               [self dismissViewControllerAnimated:NO completion:nil];
-                              //[self.controller.responseTextView setText:flowDetails];
                           } error:^(NSInteger errorCode, NSString *errorMessage) {
                               [NSString stringWithFormat:@"Internal app error.\nError code: %lu\nError message: %@",errorCode,errorMessage];
                           }];
-                          [self.navigationController popToRootViewControllerAnimated:YES];
+                        //   [self.navigationController popToRootViewControllerAnimated:YES];
                       }
                   } ];
         decisionHandler(WKNavigationActionPolicyCancel);
@@ -231,6 +233,15 @@
 
     //Pass back to the decision handler
     decisionHandler(WKNavigationActionPolicyAllow);
+}
+
+- (void)webViewWebContentProcessDidTerminate:(WKWebView *)webView {
+ // Reload current page, since we have crashed the WebContent process
+ // (most likely due to memory pressure)
+
+    NSLog(@"webViewWebContentProcessDidTerminate");
+    
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {

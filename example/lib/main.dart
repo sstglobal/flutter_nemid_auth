@@ -24,8 +24,8 @@ class _MyAppState extends State<MyApp> {
 
   Future<void> initPlatformState() async {
     await NemId.setNemIdEndpoints(
-      signing: "",
-      validation: "",
+      signing: "https://inf-test1-app01.northeurope.cloudapp.azure.com:55154/api/nemid",
+      validation: "https://inf-test1-app01.northeurope.cloudapp.azure.com:55154/api/nemid/validate",
       isDev: true,
     );
     String response;

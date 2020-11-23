@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ViewController-->
+        <scene sceneID="5">
+            <objects>
+                <viewController storyboardIdentifier="NemIDViewController" extendedLayoutIncludesOpaqueBars="YES" modalPresentationStyle="currentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2" userLabel="ViewController" customClass="NemIDViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dgh-q0-s9Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="E6f-sW-NKJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9IK-We-Ntp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.10000000000000001" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L4g-oZ-Vzl">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="redraw" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Ch-wh-yLI">
+                                <rect key="frame" x="0.0" y="151.5" width="414" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Annuller" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WjT-tj-mQp">
+                                        <rect key="frame" x="15" y="41.5" width="100" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="Dao-Y2-hvP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
+                                        <color key="textColor" red="0.33536246827411165" green="0.035788540209295096" blue="0.021016261321960043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log på med NemID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbI-eI-fnq">
+                                        <rect key="frame" x="120" y="40" width="274" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <color key="textColor" red="0.022039478229499126" green="0.12956388513422168" blue="0.33536246827411165" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="redraw" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6wd-8g-NAs">
+                                        <rect key="frame" x="0.0" y="70.5" width="384" height="1"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="2hH-Th-FsK"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="redraw" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l4S-tt-t3F">
+                                        <rect key="frame" x="0.0" y="74.5" width="384" height="1"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="Ync-KI-FrE"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="6wd-8g-NAs" firstAttribute="leading" secondItem="3Ch-wh-yLI" secondAttribute="leading" id="2Dd-QR-1CJ"/>
+                                    <constraint firstItem="l4S-tt-t3F" firstAttribute="centerX" secondItem="6wd-8g-NAs" secondAttribute="centerX" id="2Pr-VW-uPA"/>
+                                    <constraint firstItem="lbI-eI-fnq" firstAttribute="leading" secondItem="WjT-tj-mQp" secondAttribute="trailing" constant="5" id="2Wm-Ke-Mwi"/>
+                                    <constraint firstItem="l4S-tt-t3F" firstAttribute="width" secondItem="6wd-8g-NAs" secondAttribute="width" id="50b-Wi-R2r"/>
+                                    <constraint firstItem="WjT-tj-mQp" firstAttribute="leading" secondItem="3Ch-wh-yLI" secondAttribute="leading" constant="15" id="58h-as-kzD"/>
+                                    <constraint firstAttribute="height" constant="100" id="8C6-Kl-i0B"/>
+                                    <constraint firstItem="6wd-8g-NAs" firstAttribute="top" secondItem="lbI-eI-fnq" secondAttribute="bottom" constant="10" id="HzU-xx-f4H"/>
+                                    <constraint firstItem="l4S-tt-t3F" firstAttribute="top" secondItem="6wd-8g-NAs" secondAttribute="bottom" constant="3" id="IgT-N5-l2E"/>
+                                    <constraint firstAttribute="trailing" secondItem="lbI-eI-fnq" secondAttribute="trailing" constant="20" id="UG5-Lt-Wy1"/>
+                                    <constraint firstAttribute="trailing" secondItem="6wd-8g-NAs" secondAttribute="trailing" constant="30" id="UgG-nF-QAy"/>
+                                    <constraint firstItem="WjT-tj-mQp" firstAttribute="centerY" secondItem="3Ch-wh-yLI" secondAttribute="centerY" id="d0h-d8-MPP"/>
+                                    <constraint firstItem="lbI-eI-fnq" firstAttribute="centerY" secondItem="3Ch-wh-yLI" secondAttribute="centerY" id="gws-Nc-CGQ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="redraw" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EeL-5K-s4N">
+                                <rect key="frame" x="0.0" y="246.5" width="414" height="561.5"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="E6f-sW-NKJ" firstAttribute="top" secondItem="EeL-5K-s4N" secondAttribute="bottom" id="FEc-RR-QAh"/>
+                            <constraint firstItem="3Ch-wh-yLI" firstAttribute="centerX" secondItem="EeL-5K-s4N" secondAttribute="centerX" id="PHU-1o-VMb"/>
+                            <constraint firstItem="L4g-oZ-Vzl" firstAttribute="centerX" secondItem="9IK-We-Ntp" secondAttribute="centerX" id="TMu-WO-jJ9"/>
+                            <constraint firstItem="L4g-oZ-Vzl" firstAttribute="centerY" secondItem="9IK-We-Ntp" secondAttribute="centerY" id="U2C-vW-gNR"/>
+                            <constraint firstItem="EeL-5K-s4N" firstAttribute="height" secondItem="9IK-We-Ntp" secondAttribute="height" multiplier="2:3" id="V6u-lv-KgX"/>
+                            <constraint firstItem="3Ch-wh-yLI" firstAttribute="width" secondItem="EeL-5K-s4N" secondAttribute="width" id="a92-yf-RB5"/>
+                            <constraint firstItem="L4g-oZ-Vzl" firstAttribute="width" secondItem="9IK-We-Ntp" secondAttribute="width" id="eQD-1q-iGT"/>
+                            <constraint firstItem="EeL-5K-s4N" firstAttribute="leading" secondItem="9IK-We-Ntp" secondAttribute="leading" id="ebC-As-SwL"/>
+                            <constraint firstItem="L4g-oZ-Vzl" firstAttribute="height" secondItem="9IK-We-Ntp" secondAttribute="height" id="iRV-rg-yfz"/>
+                            <constraint firstItem="EeL-5K-s4N" firstAttribute="top" secondItem="3Ch-wh-yLI" secondAttribute="bottom" constant="-5" id="ro3-l6-LIt"/>
+                            <constraint firstAttribute="trailing" secondItem="EeL-5K-s4N" secondAttribute="trailing" id="vak-KO-jDg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Lkz-2K-SYT"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="placeholderForWebViews" destination="EeL-5K-s4N" id="jhV-vP-DmG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="602" y="-606"/>
+        </scene>
+    </scenes>
+</document>

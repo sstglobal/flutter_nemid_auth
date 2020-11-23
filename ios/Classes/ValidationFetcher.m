@@ -13,18 +13,21 @@
 #pragma mark - Helper methods
 + (void)fetch:(NSURL *)url andSaml:(NSString *)dataString success:(ValidationFetcherSuccessBlock)successBlock error:(ValidationFetcherErrorBlock)errorBlock {
     NSLog(@"Fetching validation from url:%@ with data:%@", url, dataString);
-    
+
     NSURLRequest *request = [NetworkUtilities urlRequestWithData:url andDataString:dataString requestType:@"POST"];
     NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfig];
-    
-    [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {  
+
+    [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (!error) {
             NSMutableDictionary *dict = [NetworkUtilities parseKeyValueResponse:data];
             NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
             NSInteger statusCode = 0;
             statusCode = httpResponse.statusCode;
             [dict setObject:[NSNumber numberWithInt:statusCode] forKey:@"status"];
+            NSData *headerData = [NSJSONSerialization dataWithJSONObject:httpResponse.allHeaderFields options:0 error:nil];
+            NSString *headerDataString = [[NSString alloc] initWithData:headerData encoding:NSUTF8StringEncoding];
+            [dict setObject:headerDataString forKey:@"headers"];
             NSLog(@"Validation response fetched from url:%@ with result:%@", url, dict);
             dispatch_sync(dispatch_get_main_queue(), ^{
                successBlock([[ValidationResponse alloc] initWithDictionary:dict]);

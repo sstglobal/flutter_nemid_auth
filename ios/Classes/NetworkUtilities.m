@@ -2,7 +2,7 @@
 //  NetworkUtilities.m
 //  TestNemIdJavascript
 //
-//     
+//
 
 #import "NetworkUtilities.h"
 #import "NIDBase64.h"
@@ -49,16 +49,16 @@
 + (NSDictionary*)parseKeyValueResponse:(NSData*)data{
     NSString *response = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSLog(@"Response from SP backend was: %@", response);
-    
+
     NSArray *keyValuePairs = [response componentsSeparatedByString:@";"];
     if ([keyValuePairs count] == 0) {
         [NSException raise:@"Failed to parse parameter response from server" format:@"The response was %@", response];
     }
-    
+
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithCapacity:3];
     for (int i = 0; i < [keyValuePairs count]; i++) {
         NSString *keyValuePairStr = [keyValuePairs objectAtIndex:i];
-        
+
         [dict setObject:keyValuePairStr forKey:@"result"];
     }
     return dict;
