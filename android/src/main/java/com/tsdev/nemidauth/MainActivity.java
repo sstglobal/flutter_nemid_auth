@@ -51,7 +51,6 @@ public class MainActivity extends Activity {
     public String signingEndpoint;
     public String validationEndpoint;
     public static boolean isDev = false;
-    public boolean firstLoad = false;
 
     //region Private View setup and utility methods
     @Override
@@ -66,7 +65,7 @@ public class MainActivity extends Activity {
         setupWidthAndHeight();
 
         setupDeviceSize();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && !firstLoad) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             startFlow();
         }
     }
@@ -107,7 +106,6 @@ public class MainActivity extends Activity {
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     private void startFlow() {
-        firstLoad = true;
         Request request = new Request.Builder()
                 .url(signingEndpoint)
                 .build();
@@ -140,24 +138,20 @@ public class MainActivity extends Activity {
                         validateResponse();
                     } else {
                         setResult(Activity.RESULT_CANCELED);
-                        firstLoad = false;
                         finish();
                     }
                 }  else {
                     setResult(Activity.RESULT_CANCELED);
-                    firstLoad = false;
                     finish();
                 }
             }
         } else if (resultCode == Activity.RESULT_CANCELED) {
             setResult(Activity.RESULT_CANCELED);
-            firstLoad = false;
             finish();
         } else {
             Intent resultIntent = new Intent();
             resultIntent.putExtra("error", resultCode);
             setResult(Activity.RESULT_CANCELED, resultIntent);
-            firstLoad = false;
             finish();
         }
     }
@@ -181,7 +175,6 @@ public class MainActivity extends Activity {
                     Intent resultIntent = new Intent();
                     resultIntent.putExtra("result", result);
                     setResult(Activity.RESULT_CANCELED, resultIntent);
-                    firstLoad = false;
                     finish();
                 }
 
@@ -198,7 +191,6 @@ public class MainActivity extends Activity {
 
                     resultIntent.putExtra("result", result);
                     resultIntent.putExtra("status", response.code());
-                    firstLoad = false;
                     finish();
                 }
             });

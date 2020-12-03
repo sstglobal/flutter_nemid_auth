@@ -7,5 +7,6 @@
     add close button on IOS
 ## [1.0.5] - 3-12-2020.
     fix bug IOS
+## [1.0.6] - 3-12-2020.
 
 * initial release.
