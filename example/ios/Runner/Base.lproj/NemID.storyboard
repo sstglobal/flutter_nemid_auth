@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,10 +24,13 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="redraw" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Ch-wh-yLI">
-                                <rect key="frame" x="0.0" y="151.5" width="414" height="100"/>
+                                <rect key="frame" x="0.0" y="191.5" width="414" height="60"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Annuller" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WjT-tj-mQp">
-                                        <rect key="frame" x="15" y="41.5" width="100" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Annuller" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WjT-tj-mQp">
+                                        <rect key="frame" x="15" y="30" width="100" height="17"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="cancelBtn">
+                                            <accessibilityTraits key="traits" button="YES" staticText="YES"/>
+                                        </accessibility>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="Dao-Y2-hvP"/>
                                         </constraints>
@@ -36,25 +39,32 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log på med NemID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbI-eI-fnq">
-                                        <rect key="frame" x="120" y="40" width="274" height="20.5"/>
+                                        <rect key="frame" x="120" y="20" width="274" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <color key="textColor" red="0.022039478229499126" green="0.12956388513422168" blue="0.33536246827411165" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="redraw" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6wd-8g-NAs">
-                                        <rect key="frame" x="0.0" y="70.5" width="384" height="1"/>
+                                        <rect key="frame" x="0.0" y="50.5" width="414" height="1"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="2hH-Th-FsK"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="redraw" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l4S-tt-t3F">
-                                        <rect key="frame" x="0.0" y="74.5" width="384" height="1"/>
+                                        <rect key="frame" x="0.0" y="54.5" width="414" height="1"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="Ync-KI-FrE"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="joP-Cx-9eJ">
+                                        <rect key="frame" x="9" y="22" width="85" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="onClose:" destination="2" eventType="touchUpInside" id="ycA-7V-n4j"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -63,11 +73,11 @@
                                     <constraint firstItem="lbI-eI-fnq" firstAttribute="leading" secondItem="WjT-tj-mQp" secondAttribute="trailing" constant="5" id="2Wm-Ke-Mwi"/>
                                     <constraint firstItem="l4S-tt-t3F" firstAttribute="width" secondItem="6wd-8g-NAs" secondAttribute="width" id="50b-Wi-R2r"/>
                                     <constraint firstItem="WjT-tj-mQp" firstAttribute="leading" secondItem="3Ch-wh-yLI" secondAttribute="leading" constant="15" id="58h-as-kzD"/>
-                                    <constraint firstAttribute="height" constant="100" id="8C6-Kl-i0B"/>
+                                    <constraint firstAttribute="height" constant="60" id="8C6-Kl-i0B"/>
                                     <constraint firstItem="6wd-8g-NAs" firstAttribute="top" secondItem="lbI-eI-fnq" secondAttribute="bottom" constant="10" id="HzU-xx-f4H"/>
                                     <constraint firstItem="l4S-tt-t3F" firstAttribute="top" secondItem="6wd-8g-NAs" secondAttribute="bottom" constant="3" id="IgT-N5-l2E"/>
                                     <constraint firstAttribute="trailing" secondItem="lbI-eI-fnq" secondAttribute="trailing" constant="20" id="UG5-Lt-Wy1"/>
-                                    <constraint firstAttribute="trailing" secondItem="6wd-8g-NAs" secondAttribute="trailing" constant="30" id="UgG-nF-QAy"/>
+                                    <constraint firstAttribute="trailing" secondItem="6wd-8g-NAs" secondAttribute="trailing" id="UgG-nF-QAy"/>
                                     <constraint firstItem="WjT-tj-mQp" firstAttribute="centerY" secondItem="3Ch-wh-yLI" secondAttribute="centerY" id="d0h-d8-MPP"/>
                                     <constraint firstItem="lbI-eI-fnq" firstAttribute="centerY" secondItem="3Ch-wh-yLI" secondAttribute="centerY" id="gws-Nc-CGQ"/>
                                 </constraints>
@@ -103,7 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="602" y="-606"/>
+            <point key="canvasLocation" x="601.44927536231887" y="-606.02678571428567"/>
         </scene>
     </scenes>
 </document>

@@ -3,5 +3,7 @@
 ## [1.0.2] - 29-10-2020.
 ## [1.0.3] - 23-11-2020.
     fix bugs when close IOS & Android
+## [1.0.4] - 3-12-2020.
+    add close button on IOS
 
 * initial release.

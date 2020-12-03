@@ -37,6 +37,11 @@
     [self loadNemID];
 }
 
+- (IBAction)onClose:(id)sender {
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
+
+
 #pragma mark - MainViewController methods
 
 -(void)loadNemID {
@@ -145,7 +150,7 @@
 }
 
 - (void)enableAppSwitch {
-	[self doAppSwitchWithReturnUrl:@"flutternemid://nemidfinished"];
+	[self doAppSwitchWithReturnUrl:@"nemidauth://nemidfinished"];
 }
 
 - (void)putSignResponse:(NSString *) xmlDsig withSuccess:(ValidationFetcherSuccessBlock)successBlock error:(ValidationFetcherErrorBlock)errorBlock {
@@ -233,15 +238,6 @@
 
     //Pass back to the decision handler
     decisionHandler(WKNavigationActionPolicyAllow);
-}
-
-- (void)webViewWebContentProcessDidTerminate:(WKWebView *)webView {
- // Reload current page, since we have crashed the WebContent process
- // (most likely due to memory pressure)
-
-    NSLog(@"webViewWebContentProcessDidTerminate");
-    
-    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {

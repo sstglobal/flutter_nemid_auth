@@ -40,7 +40,7 @@ public class NemIDActivity extends Activity {
             if(!url.contains(MainActivity.NIDBACKENDURL)) {
                 view.getContext().startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
             }
-            return true;
+            return false;
         }
 
         @Override

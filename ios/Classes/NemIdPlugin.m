@@ -48,11 +48,8 @@
            //Pass parameters to next view, and go to view
            if (parameters) {
                NemIDViewController *nemIDViewController;
-               if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-                   nemIDViewController = [[UIStoryboard storyboardWithName:@"NemID_iPad" bundle:bundle] instantiateViewControllerWithIdentifier:@"NemID_iPad"];
-               } else {
-                   nemIDViewController = [[UIStoryboard storyboardWithName:@"NemID_iPhone" bundle:bundle] instantiateViewControllerWithIdentifier:@"NemIDViewController"];
-               }
+        
+               nemIDViewController = [[UIStoryboard storyboardWithName:@"NemID" bundle:bundle] instantiateViewControllerWithIdentifier:@"NemIDViewController"];
 
                ClientDimensions *clientDimensions = [self getClientDimensions];
 
@@ -78,13 +75,13 @@
   }
 }
 
+
 - (void) sendResult:(NSString*)response {
     self.flutterResult(response);
 }
 
 - (ClientDimensions *)getClientDimensions {
     ClientDimensions *clientDimensions = [ClientDimensions new];
-
     clientDimensions.width = @"320";
     clientDimensions.height = @"460";
 
@@ -101,6 +98,7 @@
                                                    success:successBlock
                                                      error:errorBlock];
 }
+
 
 
 @end

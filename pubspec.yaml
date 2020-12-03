@@ -1,6 +1,6 @@
 name: nemid_auth
 description: A Flutter plugin to integrate the nemid libraries for iOS and Android.
-version: 1.0.3
+version: 1.0.4
 homepage: https://github.com/thongdinh/flutter_nemid_auth
 
 environment:
