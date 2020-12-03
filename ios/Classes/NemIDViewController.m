@@ -214,7 +214,7 @@
                           } error:^(NSInteger errorCode, NSString *errorMessage) {
                               [NSString stringWithFormat:@"Internal app error.\nError code: %lu\nError message: %@",errorCode,errorMessage];
                           }];
-                        //   [self.navigationController popToRootViewControllerAnimated:YES];
+                          [self.navigationController popToRootViewControllerAnimated:YES];
                       }
                   } ];
         decisionHandler(WKNavigationActionPolicyCancel);

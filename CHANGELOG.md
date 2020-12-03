@@ -5,5 +5,7 @@
     fix bugs when close IOS & Android
 ## [1.0.4] - 3-12-2020.
     add close button on IOS
+## [1.0.5] - 3-12-2020.
+    fix bug IOS
 
 * initial release.

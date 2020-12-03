@@ -20,7 +20,7 @@
 
 - (NSString*)description{
     NSString* resultFormat = @"{\"status\": \"%@\", \"headers\": %@, \"result\": %@}";
-        return [NSString stringWithFormat:resultFormat, self.status, self.result];        return [NSString stringWithFormat:resultFormat, self.status, self.headers, self.result];
+    return [NSString stringWithFormat:resultFormat, self.status, self.headers, self.result];
 }
 
 @end
