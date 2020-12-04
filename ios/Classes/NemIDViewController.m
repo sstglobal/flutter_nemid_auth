@@ -38,6 +38,7 @@
 }
 
 - (IBAction)onClose:(id)sender {
+    [self.controller sendResult:NULL];
     [self dismissViewControllerAnimated:NO completion:nil];
 }
 
