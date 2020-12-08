@@ -208,6 +208,12 @@
                       } else {
                           contentNormalized = [NetworkUtilities base64Decode:content];
                           NSLog(@"Got content while evaluating getContent(): %@", contentNormalized);
+
+                          if (contentNormalized.length <= 20) {
+                              [self dismissViewControllerAnimated:NO completion:nil];
+                              return;
+                          }
+
                           [self putSignResponse:content withSuccess:^(ValidationResponse *validationResponse) {
                               [self validateResponse:validationResponse];
                               [self getFlowDetailsFromValidationResponse:validationResponse andJSClientResponse:contentNormalized];

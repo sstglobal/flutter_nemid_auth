@@ -24,10 +24,8 @@ class _MyAppState extends State<MyApp> {
 
   Future<void> initPlatformState() async {
     await NemId.setNemIdEndpoints(
-      signing:
-          "https://inf-test1-app01.northeurope.cloudapp.azure.com:55154/api/nemid",
-      validation:
-          "https://inf-test1-app01.northeurope.cloudapp.azure.com:55154/api/nemid/validate",
+      signing: "",
+      validation: "",
       isDev: true,
     );
     String response;
@@ -38,7 +36,7 @@ class _MyAppState extends State<MyApp> {
       response = null;
     }
 
-    if (!mounted) return;
+    if (!mounted || response == null) return;
 
     print("response $response");
 
